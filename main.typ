@@ -1,71 +1,100 @@
-#set text(font: "Noto Serif Telugu")
+// Telugu Learning Material - Main Document
+// Compile with: typst compile main.typ
 
-#heading[తెలుగు అక్షరాలు]
+// Document Setup
+#set text(font: "Noto Serif Telugu", size: 12pt)
+#set page(
+  paper: "a4",
+  margin: (x: 1.5cm, y: 2cm),
+  header: [
+    #set text(size: 10pt)
+    #block(
+      width: 100%,
+      inset: 8pt,
+      stroke: (bottom: 1pt + black),
+      [
+        #grid(
+          columns: (1fr, 1fr),
+          align: (left, right),
+          [Chinmaya Mission San Jose],
+          [Bala Vihar Telugu Notes]
+        )
+      ]
+    )
+  ],
+  footer: [
+    #set text(size: 10pt)
+    #block(
+      width: 100%,
+      inset: 8pt,
+      stroke: (top: 1pt + black),
+      [
+        #grid(
+          columns: (1fr, 1fr, 1fr),
+          align: (left, center, right),
+          [Footer Left],
+          [Footer Center],
+          [Footer Right - #context counter(page).display("1")]
+        )
+      ]
+    )
+  ]
+)
+#set heading(numbering: "1.")
+#show heading.where(level: 1): set text(size: 18pt)
+#show heading.where(level: 2): set text(size: 14pt)
 
-= అచ్చులు (Vowels)
+// Title Page
+#align(center)[
+  #text(size: 24pt, weight: "bold")[
+    తెలుగు అక్షరాలు మరియు పదాలు
+  ]
+  #v(0.5em)
+  #text(size: 16pt)[
+    Telugu Alphabets and Words
+  ]
+  #v(2em)
+  #text(size: 14pt)[
+    బాలవిహార్ తెలుగు నోట్స్
+  ]
+]
 
-== స్వతంత్ర రూపాలు (Independent Forms)
+#pagebreak()
 
-#grid(
-  columns: 8,
-  gutter: 1.5em,
-  [అ], [ఆ], [ఇ], [ఈ], [ఉ], [ఊ], [ఋ], [ౠ],
-  [ఎ], [ఏ], [ఐ], [ఒ], [ఓ], [ఔ], [అం], [అః]
+// Table of Contents
+#outline(
+  title: [విషయ సూచిక / Table of Contents],
+  indent: auto
 )
 
-== గుణింతాలు (Vowel Signs / Dependent Forms)
+#pagebreak()
 
-#grid(
-  columns: 8,
-  gutter: 1.5em,
-  [అ], [◌ా], [◌ి], [◌ీ], [◌ు], [◌ూ], [◌ృ], [◌ౄ],
-  [◌ె], [◌ే], [◌ై], [◌ొ], [◌ో], [◌ౌ], [◌ం], [◌ః]
-)
+// Include all content files
+#include "acchulu.typ"
+#pagebreak()
 
-= హల్లులు (Consonants)
+#include "hallulu.typ"
+#pagebreak()
 
-== వర్గీయ హల్లులు (Structured Consonants)
+#include "vattulu.typ"
+#pagebreak()
 
-*క వర్గం:*
-#grid(
-  columns: 5,
-  gutter: 1.5em,
-  [క], [ఖ], [గ], [ఘ], [ఙ]
-)
+#include "guNintaalu.typ"
+#pagebreak()
 
-*చ వర్గం:*
-#grid(
-  columns: 5,
-  gutter: 1.5em,
-  [చ], [ఛ], [జ], [ఝ], [ఞ]
-)
+#include "sarala_padaalu.typ"
+#pagebreak()
 
-*ట వర్గం:*
-#grid(
-  columns: 5,
-  gutter: 1.5em,
-  [ట], [ఠ], [డ], [ఢ], [ణ]
-)
+#include "vattulu_lenivi.typ"
+#pagebreak()
 
-*త వర్గం:*
-#grid(
-  columns: 5,
-  gutter: 1.5em,
-  [త], [థ], [ద], [ధ], [న]
-)
+#include "vaara_dinaalu.typ"
+#pagebreak()
 
-*ప వర్గం:*
-#grid(
-  columns: 5,
-  gutter: 1.5em,
-  [ప], [ఫ], [బ], [భ], [మ]
-)
+#include "sankhyalu.typ"
+#pagebreak()
 
-== అవర్గీయ హల్లులు (Unstructured Consonants)
+#include "dikkulu.typ"
+#pagebreak()
 
-#grid(
-  columns: 5,
-  gutter: 1.5em,
-  [య], [ర], [ల], [వ], [శ],
-  [ష], [స], [హ], [ళ], [క్ష]
-)
+#include "rangulu.typ"
