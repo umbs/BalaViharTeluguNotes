@@ -2,7 +2,7 @@
 // Compile with: typst compile main.typ
 
 // Document Setup
-#set text(font: "Noto Serif Telugu", size: 12pt)
+#set text(font: "Noto Serif Telugu", size: 14pt)
 #set page(
   paper: "a4",
   margin: (x: 1.5cm, y: 2cm),
@@ -82,11 +82,12 @@
 #include "guNintaalu.typ"
 #pagebreak()
 
-#include "sarala_padaalu.typ"
-#pagebreak()
+// Temporarily removed - will revisit later
+// #include "sarala_padaalu.typ"
+// #pagebreak()
 
-#include "vattulu_lenivi.typ"
-#pagebreak()
+// #include "vattulu_lenivi.typ"
+// #pagebreak()
 
 #include "vaara_dinaalu.typ"
 #pagebreak()
@@ -98,3 +99,6 @@
 #pagebreak()
 
 #include "rangulu.typ"
+#pagebreak()
+
+#include "maasamulu.typ"
