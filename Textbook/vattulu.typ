@@ -2,9 +2,6 @@
 
 == సాధారణ వత్తులు (Common Conjuncts)
 
-// TODO: Add vattu examples here
-// Examples: క్క, గ్గ, చ్చ, etc.
-
 #grid(
   columns: 6,
   gutter: 1.5em,

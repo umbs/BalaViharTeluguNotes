@@ -69,36 +69,33 @@
 
 #pagebreak()
 
-// Include all content files
-#include "acchulu.typ"
+// Include all content files from Textbook folder
+#include "Textbook/aksharalu.typ"
 #pagebreak()
 
-#include "hallulu.typ"
-#pagebreak()
+// #include "Textbook/vattulu.typ"
+// #pagebreak()
 
-#include "vattulu.typ"
-#pagebreak()
-
-#include "guNintaalu.typ"
+#include "Textbook/guNintaalu.typ"
 #pagebreak()
 
 // Temporarily removed - will revisit later
-// #include "sarala_padaalu.typ"
+// #include "Textbook/sarala_padaalu.typ"
 // #pagebreak()
 
-// #include "vattulu_lenivi.typ"
+// #include "Textbook/vattulu_lenivi.typ"
 // #pagebreak()
 
-#include "vaara_dinaalu.typ"
+#include "Textbook/vaaramulu.typ"
 #pagebreak()
 
-#include "sankhyalu.typ"
+#include "Textbook/sankhyalu.typ"
 #pagebreak()
 
-#include "dikkulu.typ"
+#include "Textbook/dikkulu.typ"
 #pagebreak()
 
-#include "rangulu.typ"
+#include "Textbook/rangulu.typ"
 #pagebreak()
 
-#include "maasamulu.typ"
+#include "Textbook/maasamulu.typ"

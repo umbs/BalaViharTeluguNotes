@@ -1,3 +1,5 @@
+#set text(size: 13pt)
+
 = మాసములు (Telugu Months)
 
 #table(
@@ -7,7 +9,7 @@
   stroke: 1pt + black,
   [*మాసము*], [*Transliteration*], [*English Month*], [*Festivals & Significance*],
 
-  [చైత్ర], [chaitra], [Mar/Apr], [Ugaadi, Sri Rama Navami, Ekadasi(2), Purnima],
+  [చైత్ర], [chaitra], [Mar/Apr], [Ugaadi, Sri Rama Navami],
 
   [వైషాఖ], [vaishaaKha], [Apr/May], [Sita Jayanti, Akshaya Tritiya],
 
