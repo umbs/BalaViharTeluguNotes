@@ -73,23 +73,19 @@
 #include "Textbook/aksharalu.typ"
 #pagebreak()
 
-// #include "Textbook/vattulu.typ"
-// #pagebreak()
-
 #include "Textbook/guNintaalu.typ"
 #pagebreak()
 
-// Temporarily removed - will revisit later
-// #include "Textbook/sarala_padaalu.typ"
-// #pagebreak()
-
-// #include "Textbook/vattulu_lenivi.typ"
-// #pagebreak()
+#include "Textbook/vattulu.typ"
+#pagebreak()
 
 #include "Textbook/vaaramulu.typ"
 #pagebreak()
 
 #include "Textbook/sankhyalu.typ"
+#pagebreak()
+
+#include "Textbook/sarala_padaalu.typ"
 #pagebreak()
 
 #include "Textbook/dikkulu.typ"
