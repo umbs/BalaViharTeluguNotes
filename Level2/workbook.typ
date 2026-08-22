@@ -1,67 +1,17 @@
-// Telugu Learning Material - Workbook (Homework Sheets)
-// Compile with: typst compile workbook_main.typ workbook.pdf
+// Bala Vihar Telugu — Level 2 Workbook (printable homework sheets)
+// Compile with: typst compile Level2/workbook.typ
+#import "../template.typ": notes, workbook-footer
 
-// Document Setup
-#set text(font: "Noto Serif Telugu", size: 14pt)
-#set page(
-  paper: "a4",
-  margin: (x: 1.5cm, y: 2cm),
-  header: [
-    #set text(size: 10pt)
-    #block(
-      width: 100%,
-      inset: 8pt,
-      stroke: (bottom: 1pt + black),
-      [
-        #grid(
-          columns: (1fr, 1fr),
-          align: (left, right),
-          [Chinmaya Mission San Jose],
-          [Bala Vihar Telugu - Homework]
-        )
-      ]
-    )
-  ],
-  footer: [
-    #set text(size: 10pt)
-    #block(
-      width: 100%,
-      inset: 8pt,
-      stroke: (top: 1pt + black),
-      [
-        #grid(
-          columns: (1fr, 1fr, 1fr),
-          align: (left, center, right),
-          [Name: #box(width: 4cm, line(length: 100%, stroke: 0.5pt))],
-          [Date: #box(width: 3cm, line(length: 100%, stroke: 0.5pt))],
-          [Page #context counter(page).display("1")]
-        )
-      ]
-    )
-  ]
+#show: notes.with(
+  header-right: "Bala Vihar Telugu - Homework",
+  footer: workbook-footer,
+  title: "హోంవర్క్ పుస్తకం",
+  subtitle: "Workbook",
+  tagline: "బాలవిహార్ తెలుగు అభ్యాసం",
+  level: "Level 2",
 )
-#set heading(numbering: "1.")
-#show heading.where(level: 1): set text(size: 18pt)
-#show heading.where(level: 2): set text(size: 14pt)
 
-// Title Page
-#align(center)[
-  #text(size: 24pt, weight: "bold")[
-    హోంవర్క్ పుస్తకం
-  ]
-  #v(0.5em)
-  #text(size: 16pt)[
-    Workbook
-  ]
-  #v(2em)
-  #text(size: 14pt)[
-    బాలవిహార్ తెలుగు అభ్యాసం
-  ]
-]
-
-#pagebreak()
-
-// Include homework sheets
+// Homework sheets, assembled several per page.
 // Pages 2-3: 4 per page
 #include "Workbook/ka_gunintham.typ"
 #v(1em)

@@ -2,33 +2,42 @@
 
 Telugu language learning material for the **Chinmaya Mission San Jose** Bala Vihar
 program. The content is authored in [Typst](https://typst.app/) and compiled into
-two printable PDFs: a **Textbook** (reference material) and a **Workbook**
-(printable practice/homework sheets).
+printable PDFs — a **Textbook** (reference material) and a **Workbook** (printable
+practice/homework sheets) for each class level.
 
-## Documents
-
-| Source | Output | Description |
-| --- | --- | --- |
-| `main.typ` | `main.pdf` | **Textbook** — reference covering the Telugu alphabet, combinations, numbers, words, and more. |
-| `workbook_main.typ` | `workbook.pdf` | **Workbook** — printable guṇintaṁ practice sheets with name/date fields and ruled writing lines. |
-
-Each top-level `*.typ` file sets up the page layout (A4, headers/footers, title
-page, table of contents) and `#include`s the modular content files described
-below.
+The program has three levels (**Level 1**, **Level 2**, **Level 3**). Each level
+lives in its own folder and is self-contained. Currently **Level 2** is populated;
+Level 1 and Level 3 will be added as siblings under the same structure.
 
 ## Repository layout
 
 ```
-Textbook/          Content modules for the textbook (one topic per file)
-Workbook/          Practice sheets for the workbook (one consonant per file)
-main.typ           Textbook entry point
-workbook_main.typ  Workbook entry point
-main.pdf           Compiled textbook
-workbook.pdf       Compiled workbook
-.fonts/            Bundled Noto Serif Telugu font family + licenses (kept out of view)
+template.typ       Shared page layout (A4, header/footer, cover page, headings)
+Level2/            Level 2 class material
+  Textbook/          Content modules for the textbook (one topic per file)
+  Workbook/          Practice sheets for the workbook (one consonant per file)
+  textbook.typ       Textbook entry point   -> Level2/textbook.pdf
+  workbook.typ       Workbook entry point   -> Level2/workbook.pdf
+Level1/            (coming soon — same shape as Level2/)
+Level3/            (coming soon — same shape as Level2/)
+reference/         Source PDFs used to author the material
+.fonts/            Bundled Noto Serif Telugu font family + licenses (shared)
 ```
 
-### `Textbook/`
+All levels share `template.typ` and `.fonts/` at the repository root. To add a new
+level, create a `Level<N>/` folder mirroring `Level2/` and point its entry files
+at `../template.typ`.
+
+### `template.typ`
+
+Defines a `notes(...)` document template applied via `#show: notes.with(...)`.
+It centralizes the page size, running header/footer, cover page, and heading
+styles so each level's entry files only declare what differs (title, level,
+whether to show a table of contents, and which footer to use). Two footers are
+exported: `textbook-footer` (centered page number) and `workbook-footer`
+(name/date fields + page number).
+
+### `Level2/Textbook/`
 
 | File | Topic |
 | --- | --- |
@@ -42,25 +51,26 @@ workbook.pdf       Compiled workbook
 | `rangulu.typ` | Colors |
 | `maasamulu.typ` | Months |
 
-### `Workbook/`
+### `Level2/Workbook/`
 
 One `*_gunintham.typ` file per consonant (`ka`, `kha`, `ga`, …), each rendering
 that consonant's full guṇintaṁ followed by blank ruled lines for handwriting
-practice. These are assembled several-per-page in `workbook_main.typ`.
+practice. These are assembled several-per-page in `Level2/workbook.typ`.
 
 ## Building
 
-Requires the [Typst CLI](https://github.com/typst/typst).
+Requires the [Typst CLI](https://github.com/typst/typst). Because the entry files
+import `../template.typ`, compile with the repository root as the project root:
 
 ```sh
-typst compile main.typ            # -> main.pdf
-typst compile workbook_main.typ   # -> workbook.pdf
+typst compile --root . Level2/textbook.typ    # -> Level2/textbook.pdf
+typst compile --root . Level2/workbook.typ    # -> Level2/workbook.pdf
 ```
 
 Live-preview while editing:
 
 ```sh
-typst watch main.typ
+typst watch --root . Level2/textbook.typ
 ```
 
 ### Fonts
@@ -70,7 +80,7 @@ installed on your system (e.g. macOS `~/Library/Fonts`), no extra flags are
 needed. Otherwise, point Typst at the bundled copy:
 
 ```sh
-typst compile --font-path .fonts/NotoSerifTelugu main.typ
+typst compile --root . --font-path .fonts/NotoSerifTelugu Level2/textbook.typ
 ```
 
 The full font family, its variable/OTF/TTF builds, and license files
