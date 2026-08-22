@@ -70,6 +70,8 @@
     footer: footer,
   )
   set heading(numbering: "1.")
+  // Add breathing room below every heading before the content that follows.
+  show heading: set block(below: 1em)
   show heading.where(level: 1): set text(size: 18pt)
   show heading.where(level: 2): set text(size: 14pt)
 
@@ -89,8 +91,10 @@
   pagebreak()
 
   if show-outline {
+    heading(numbering: none, outlined: false)[విషయ సూచిక / Table of Contents]
+    v(0.5em)
     outline(
-      title: [విషయ సూచిక / Table of Contents],
+      title: none,
       indent: auto,
     )
     pagebreak()
