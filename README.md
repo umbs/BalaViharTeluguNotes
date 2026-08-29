@@ -7,7 +7,7 @@ practice/homework sheets) for each class level.
 
 The program has three levels (**Level 1**, **Level 2**, **Level 3**). Each level
 lives in its own folder and is self-contained. Currently **Level 2** is populated;
-Level 1 and Level 3 will be added as siblings under the same structure.
+see [TODO.md](TODO.md) for planned work on the remaining levels.
 
 ## Repository layout
 
@@ -18,8 +18,8 @@ Level2/            Level 2 class material
   Workbook/          Practice sheets for the workbook (one consonant per file)
   textbook.typ       Textbook entry point   -> Level2/textbook.pdf
   workbook.typ       Workbook entry point   -> Level2/workbook.pdf
-Level1/            (coming soon — same shape as Level2/)
-Level3/            (coming soon — same shape as Level2/)
+Level1/            (planned — same shape as Level2/; see TODO.md)
+Level3/            (planned — same shape as Level2/; see TODO.md)
 reference/         Source PDFs used to author the material
 .fonts/            Bundled Noto Serif Telugu font family + licenses (shared)
 ```
