@@ -1,4 +1,9 @@
-#set text(size: 18pt)
+// Scoped to this chapter: larger headings to match the enlarged content,
+// wrapped in a content block so the show rules don't leak into later chapters.
+#[
+#set text(size: 24pt)
+#show heading.where(level: 1): set text(size: 32pt)
+#show heading.where(level: 2): set text(size: 26pt)
 
 = అచ్చులు (Vowels)
 
@@ -50,3 +55,4 @@
   gutter: 1.5em,
   [య], [ర], [ల], [వ], [శ], [ష], [స], [హ], [ళ], [క్ష]
 )
+]

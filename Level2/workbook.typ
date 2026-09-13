@@ -85,3 +85,85 @@
 #include "Workbook/La_capital_gunintham.typ"
 #v(0.5em)
 #include "Workbook/ksha_gunintham.typ"
+#pagebreak()
+
+// ============================================================
+// వత్తులు — vattulu practice (one vattu per sheet, applied to
+// every consonant), assembled 4 per page.
+// ============================================================
+#align(center)[#text(size: 20pt, weight: "bold")[వత్తులు / Vattulu]]
+#v(1.5em)
+
+#include "Workbook/ka_vattulu.typ"
+#v(1em)
+#include "Workbook/kha_vattulu.typ"
+#v(1em)
+#include "Workbook/ga_vattulu.typ"
+#v(1em)
+#include "Workbook/gha_vattulu.typ"
+#pagebreak()
+
+#include "Workbook/cha_vattulu.typ"
+#v(1em)
+#include "Workbook/chha_vattulu.typ"
+#v(1em)
+#include "Workbook/ja_vattulu.typ"
+#v(1em)
+#include "Workbook/jha_vattulu.typ"
+#pagebreak()
+
+#include "Workbook/Ta_vattulu.typ"
+#v(1em)
+#include "Workbook/Tha_vattulu.typ"
+#v(1em)
+#include "Workbook/Da_vattulu.typ"
+#v(1em)
+#include "Workbook/Dha_vattulu.typ"
+#pagebreak()
+
+#include "Workbook/Na_vattulu.typ"
+#v(1em)
+#include "Workbook/tha_small_vattulu.typ"
+#v(1em)
+#include "Workbook/thha_vattulu.typ"
+#v(1em)
+#include "Workbook/dha_small_vattulu.typ"
+#pagebreak()
+
+#include "Workbook/dhha_vattulu.typ"
+#v(1em)
+#include "Workbook/na_small_vattulu.typ"
+#v(1em)
+#include "Workbook/pa_vattulu.typ"
+#v(1em)
+#include "Workbook/pha_vattulu.typ"
+#pagebreak()
+
+#include "Workbook/ba_vattulu.typ"
+#v(1em)
+#include "Workbook/bha_vattulu.typ"
+#v(1em)
+#include "Workbook/ma_vattulu.typ"
+#v(1em)
+#include "Workbook/ya_vattulu.typ"
+#pagebreak()
+
+#include "Workbook/ra_vattulu.typ"
+#v(1em)
+#include "Workbook/la_vattulu.typ"
+#v(1em)
+#include "Workbook/va_vattulu.typ"
+#v(1em)
+#include "Workbook/sha_vattulu.typ"
+#pagebreak()
+
+#include "Workbook/Sha_capital_vattulu.typ"
+#v(1em)
+#include "Workbook/sa_vattulu.typ"
+#v(1em)
+#include "Workbook/ha_vattulu.typ"
+#v(1em)
+#include "Workbook/La_capital_vattulu.typ"
+#pagebreak()
+
+#include "Workbook/ksha_vattulu.typ"

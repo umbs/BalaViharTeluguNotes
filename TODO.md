@@ -28,3 +28,22 @@ files pointing at `../template.typ`.
    highlighting prominent ones such as Vemana and Sumati.
 6. **Teach famous Satakams** — include selected famous Satakams in L1 and L2.
 7. **Children's padyalu** — add well-known children's poems (padyalu).
+
+### Teaching & engagement
+
+8. **Classroom management tips** — gather suggestions to help teachers manage the
+   classroom.
+9. **Flash card games** — design flash card games for practice.
+10. **Jeopardy-style games** — create Jeopardy-style review games.
+11. **Quick/Kaboom-style games** — create Quick/Kaboom-style games.
+12. **YouTube shorts and videos** — curate shorts and videos to make Telugu
+    interesting.
+13. **Tests/Exams** — add tests and exams for students.
+    - **Acchulu — fill in the missing** — some letters given as hints, students
+      fill the blanks (good for new students).
+    - **Acchulu — write in full** — write the entire set from memory, no hints.
+    - **Hallulu — fill in the missing** — some letters given, students fill the
+      blanks.
+    - **Hallulu — write in full** — write the entire set from memory, no hints.
+14. **Chapters with clear goals** — organize content into chapters, each with
+    clearly stated goals.

@@ -21,8 +21,13 @@ Level2/            Level 2 class material
 Level1/            (planned — same shape as Level2/; see TODO.md)
 Level3/            (planned — same shape as Level2/; see TODO.md)
 reference/         Source PDFs used to author the material
+RESOURCES.md       Curated online resources & useful links (living document)
 .fonts/            Bundled Noto Serif Telugu font family + licenses (shared)
 ```
+
+See [RESOURCES.md](RESOURCES.md) for a curated, growing list of online resources,
+videos, dictionaries, and other Telugu educational organizations to learn from and
+collaborate with.
 
 All levels share `template.typ` and `.fonts/` at the repository root. To add a new
 level, create a `Level<N>/` folder mirroring `Level2/` and point its entry files
@@ -55,7 +60,10 @@ exported: `textbook-footer` (centered page number) and `workbook-footer`
 
 One `*_gunintham.typ` file per consonant (`ka`, `kha`, `ga`, …), each rendering
 that consonant's full guṇintaṁ followed by blank ruled lines for handwriting
-practice. These are assembled several-per-page in `Level2/workbook.typ`.
+practice. Companion `*_vattulu.typ` files render one vattu applied across every
+consonant (e.g. `ka_vattulu.typ` → క్క, ఖ్క, గ్క, …) with ruled practice lines.
+These are assembled several-per-page in `Level2/workbook.typ` (guṇintaṁ sheets
+first, then a వత్తులు / Vattulu section).
 
 ## Building
 

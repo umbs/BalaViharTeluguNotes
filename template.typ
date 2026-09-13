@@ -93,6 +93,7 @@
   if show-outline {
     heading(numbering: none, outlined: false)[విషయ సూచిక / Table of Contents]
     v(0.5em)
+    show outline.entry: it => block(above: 1.2em, it)
     outline(
       title: none,
       indent: auto,

@@ -1,3 +1,9 @@
+// Scoped to this chapter: larger heading to match the enlarged content,
+// wrapped in a content block so the show rule doesn't leak into later chapters.
+#[
+#set text(size: 18pt)
+#show heading.where(level: 1): set text(size: 24pt)
+
 = గుణింతాలు (Vowel Signs)
 
 #table(
@@ -23,3 +29,4 @@
   [అం], [ం], [సున్న (sunna)], [కం, తం],
   [అః], [ః], [విసర్గము (visarga)], [కః, తః]
 )
+]

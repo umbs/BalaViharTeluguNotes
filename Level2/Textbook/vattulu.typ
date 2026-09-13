@@ -1,3 +1,10 @@
+// Scoped to this chapter: larger headings to match the enlarged content,
+// wrapped in a content block so the show rules don't leak into later chapters.
+#[
+#set text(size: 22pt)
+#show heading.where(level: 1): set text(size: 30pt)
+#show heading.where(level: 2): set text(size: 24pt)
+
 = వత్తులు (Secondary Forms of Consonants)
 
 == వర్గీయ హల్లులు (Structured Consonants)
@@ -22,3 +29,4 @@
   [య], [◌్య], [ర], [◌్ర], [ల], [◌్ల], [వ], [◌్వ], [శ], [◌్శ],
   [ష], [◌్ష], [స], [◌్స], [హ], [◌్హ], [ళ], [◌్ళ], [క్ష], [◌్క్ష],
 )
+]
