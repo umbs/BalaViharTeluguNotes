@@ -1,50 +1,45 @@
-// Hallulu (consonants) — tracing practice.
-#import "../tracing.typ": trace-row, trace-section
+// Hallulu (consonants) — tracing chart.
+#import "../tracing.typ": trace-grid, trace-section
 
 #trace-section(
   [హల్లులు (Consonants)],
   [Trace over the dotted letters. / చుక్కల అక్షరాలను అనుసరించి రాయండి.],
 )
 
-// వర్గీయ హల్లులు — structured consonants
-#trace-row([క], roman: "ka")
-#trace-row([ఖ], roman: "kha")
-#trace-row([గ], roman: "ga")
-#trace-row([ఘ], roman: "gha")
-#trace-row([ఙ], roman: "ṅa")
+// వర్గీయ హల్లులు — structured consonants (natural 5×5 varga grid).
+// Kept together so the heading never separates from its grid.
+#block(breakable: false)[
+  #text(size: 13pt, weight: "bold")[వర్గీయ హల్లులు (Structured)]
+  #v(6pt)
+  #trace-grid(
+    (
+      ([క], "ka"), ([ఖ], "kha"), ([గ], "ga"), ([ఘ], "gha"), ([ఙ], "ṅa"),
+      ([చ], "ca"), ([ఛ], "cha"), ([జ], "ja"), ([ఝ], "jha"), ([ఞ], "ña"),
+      ([ట], "ṭa"), ([ఠ], "ṭha"), ([డ], "ḍa"), ([ఢ], "ḍha"), ([ణ], "ṇa"),
+      ([త], "ta"), ([థ], "tha"), ([ద], "da"), ([ధ], "dha"), ([న], "na"),
+      ([ప], "pa"), ([ఫ], "pha"), ([బ], "ba"), ([భ], "bha"), ([మ], "ma"),
+    ),
+    columns: 5,
+    size: 22pt,
+    copies: 3,
+    gap: 4pt,
+  )
+]
 
-#trace-row([చ], roman: "ca")
-#trace-row([ఛ], roman: "cha")
-#trace-row([జ], roman: "ja")
-#trace-row([ఝ], roman: "jha")
-#trace-row([ఞ], roman: "ña")
+#v(12pt)
 
-#trace-row([ట], roman: "ṭa")
-#trace-row([ఠ], roman: "ṭha")
-#trace-row([డ], roman: "ḍa")
-#trace-row([ఢ], roman: "ḍha")
-#trace-row([ణ], roman: "ṇa")
-
-#trace-row([త], roman: "ta")
-#trace-row([థ], roman: "tha")
-#trace-row([ద], roman: "da")
-#trace-row([ధ], roman: "dha")
-#trace-row([న], roman: "na")
-
-#trace-row([ప], roman: "pa")
-#trace-row([ఫ], roman: "pha")
-#trace-row([బ], roman: "ba")
-#trace-row([భ], roman: "bha")
-#trace-row([మ], roman: "ma")
-
-// అవర్గీయ హల్లులు — unstructured consonants
-#trace-row([య], roman: "ya")
-#trace-row([ర], roman: "ra")
-#trace-row([ల], roman: "la")
-#trace-row([వ], roman: "va")
-#trace-row([శ], roman: "śa")
-#trace-row([ష], roman: "ṣa")
-#trace-row([స], roman: "sa")
-#trace-row([హ], roman: "ha")
-#trace-row([ళ], roman: "ḷa")
-#trace-row([క్ష], roman: "kṣa")
+// అవర్గీయ హల్లులు — unstructured consonants (kept with its heading).
+#block(breakable: false)[
+  #text(size: 13pt, weight: "bold")[అవర్గీయ హల్లులు (Unstructured)]
+  #v(6pt)
+  #trace-grid(
+    (
+      ([య], "ya"), ([ర], "ra"), ([ల], "la"), ([వ], "va"), ([శ], "śa"),
+      ([ష], "ṣa"), ([స], "sa"), ([హ], "ha"), ([ళ], "ḷa"), ([క్ష], "kṣa"),
+    ),
+    columns: 5,
+    size: 22pt,
+    copies: 3,
+    gap: 4pt,
+  )
+]
