@@ -4,17 +4,18 @@ Planned work for the Bala Vihar Telugu Notes. See [README.md](README.md) for the
 current repository layout and build instructions.
 
 The program has three levels (**Level 1**, **Level 2**, **Level 3**). Level 2 is
-populated; Level 1 and Level 3 are still to be added as siblings under the same
-structure. To add a level, create a `Level<N>/` folder mirroring `Level2/` (its
-own `Textbook/`, `Workbook/`, `textbook.typ`, `workbook.typ`) with the entry
-files pointing at `../template.typ`.
+populated and Level 1 has an alphabet-tracing workbook; Level 3 is still to be
+added as a sibling under the same structure. To add a level, create a `Level<N>/`
+folder mirroring `Level2/` (its own `Textbook/`, `Workbook/`, `textbook.typ`,
+`workbook.typ`) with the entry files pointing at `../template.typ`.
 
 ## Tasks
 
 ### Structure
 
-1. **Create a Level 1 folder** — scaffold `Level1/` mirroring `Level2/` and
-   point its entry files at `../template.typ`.
+1. ~~**Create a Level 1 folder**~~ — done: `Level1/` created with an
+   alphabet-tracing `workbook.typ` (Acchulu + Hallulu). Still to add: a Level 1
+   `Textbook/` and `textbook.typ` to fully mirror `Level2/`.
 
 ### Content (Level 1 & Level 2 curriculum)
 
@@ -47,3 +48,7 @@ files pointing at `../template.typ`.
     - **Hallulu — write in full** — write the entire set from memory, no hints.
 14. **Chapters with clear goals** — organize content into chapters, each with
     clearly stated goals.
+15. **Stroke-order arrows on tracing sheets** — add numbered per-stroke arrows to
+    the Level 1 tracing workbook (`Level1/Workbook/`) showing the correct pen
+    path for each letter. Needs a verified stroke-order reference for the Telugu
+    alphabet before implementing.
