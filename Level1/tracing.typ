@@ -13,12 +13,13 @@
 // Fully transparent fill, so only the dotted stroke (outline) is visible.
 #let clear = rgb(0, 0, 0, 0)
 
-// One dotted copy of a letter to trace over.
+// One dotted copy of a letter to trace over. The stroke is dark enough to
+// print clearly but still lighter than a pencil so the traced line stands out.
 #let dotted(letter, size) = text(
   size: size,
   weight: "thin",
   fill: clear,
-  stroke: (paint: luma(150), thickness: 0.6pt, dash: "densely-dotted"),
+  stroke: (paint: luma(105), thickness: 0.8pt, dash: "densely-dotted"),
 )[#letter]
 
 // One chart cell: `copies` dotted glyphs in a row (so the student traces the
