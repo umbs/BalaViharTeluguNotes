@@ -16,8 +16,11 @@ work on the remaining content and levels.
 template.typ       Shared page layout (A4, header/footer, cover page, headings)
 Level1/            Level 1 class material
   tracing.typ        Dotted trace-over helpers (trace-row / trace-section)
+  testing.typ        Fill-in-the-missing-letter helpers (question / test-header)
   Workbook/          Alphabet tracing sheets (acchulu, hallulu)
+  Tests/             Test papers (test1_acchulu, test2_hallulu)
   workbook.typ       Workbook entry point   -> Level1/workbook.pdf
+  tests.typ          Tests entry point      -> Level1/tests.pdf
 Level2/            Level 2 class material
   Textbook/          Content modules for the textbook (one topic per file)
   Workbook/          Practice sheets for the workbook (one consonant per file)
@@ -79,6 +82,28 @@ with a transparent fill and a dotted stroke — so no separate tracing font is
 needed. The shared helpers `trace-row` and `trace-section` live in
 `Level1/tracing.typ`.
 
+`Tests/` holds printable **test papers**. `test1_acchulu.typ` and
+`test2_hallulu.typ` are "fill in the missing letter" tests: a question shows a
+stretch of the alphabet chart with some cells blanked out for the student to
+write in. Blanked positions are disjoint across questions, so no letter is
+asked twice.
+
+`test1_acchulu.typ` (16 marks) is four questions over the full 16-vowel chart,
+four blanks each. `test2_hallulu.typ` (36 marks) has two parts, because
+reprinting all 35 consonants for the sake of four blanks wastes the page:
+
+- **Part A** — four *slice* questions (a pair of vargas each, four blanks) that
+  between them partition the chart, so the consonants are printed about once
+  across the part rather than four times.
+- **Part B** — two *full chart* questions with ten blanks each, stacked on a
+  page of their own; at that blank density the whole chart earns its space.
+
+A 5-column consonant slice is only half the page wide, so Part A is set two-up
+with `question-row`, fitting all four slice questions on one page. The helpers
+`question`, `question-row`, `quiz-grid`, `test-part`, and `test-header` live in
+`Level1/testing.typ`; per-question marks are derived from the number of blanks,
+so they cannot drift out of sync with the grid.
+
 ## Building
 
 Requires the [Typst CLI](https://github.com/typst/typst). Because the entry files
@@ -86,6 +111,7 @@ import `../template.typ`, compile with the repository root as the project root:
 
 ```sh
 typst compile --root . Level1/workbook.typ    # -> Level1/workbook.pdf
+typst compile --root . Level1/tests.typ       # -> Level1/tests.pdf
 typst compile --root . Level2/textbook.typ    # -> Level2/textbook.pdf
 typst compile --root . Level2/workbook.typ    # -> Level2/workbook.pdf
 ```

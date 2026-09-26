@@ -40,12 +40,16 @@ folder mirroring `Level2/` (its own `Textbook/`, `Workbook/`, `textbook.typ`,
 12. **YouTube shorts and videos** — curate shorts and videos to make Telugu
     interesting.
 13. **Tests/Exams** — add tests and exams for students.
-    - **Acchulu — fill in the missing** — some letters given as hints, students
-      fill the blanks (good for new students).
+    - ~~**Acchulu — fill in the missing**~~ — done for Level 1:
+      `Level1/Tests/test1_acchulu.typ` (4 questions × 4 blanks).
+    - ~~**Hallulu — fill in the missing**~~ — done for Level 1:
+      `Level1/Tests/test2_hallulu.typ` (Part A: 4 slice questions × 4 blanks
+      partitioning the chart; Part B: 2 full charts × 10 blanks; 36 marks).
     - **Acchulu — write in full** — write the entire set from memory, no hints.
-    - **Hallulu — fill in the missing** — some letters given, students fill the
-      blanks.
     - **Hallulu — write in full** — write the entire set from memory, no hints.
+    - **Level 2 tests** — same shape for the Level 2 material (guṇintaalu,
+      vattulu, sarala padaalu).
+    - **Answer keys** — teacher copies of each test with the blanks filled in.
 14. **Chapters with clear goals** — organize content into chapters, each with
     clearly stated goals.
 15. **Stroke-order arrows on tracing sheets** — add numbered per-stroke arrows to
