@@ -76,13 +76,14 @@ first, then a వత్తులు / Vattulu section).
 
 An alphabet-**tracing** workbook for beginning writers. `Workbook/acchulu.typ`
 and `Workbook/hallulu.typ` give the alphabet as dotted letters, repeated as
-eight rounds down a page with a rule between rounds:
+rounds down a page with a rule between rounds — as many rounds as the page
+holds, which depends on how many lines a round takes:
 
 | Sheet | Round | Rounds per page |
 | --- | --- | --- |
 | అచ్చులు | 16 vowels in two lines of 8 | 8 |
 | హల్లులు — వర్గీయ | the 25 structured consonants as their 5 × 5 varga square | 8, two to a band (a varga square is only half the page wide) |
-| హల్లులు — అవర్గీయ | the 11 unstructured consonants (ఱ included) in one line | 8 |
+| హల్లులు — అవర్గీయ | the 11 unstructured consonants in one line (ఱ included, last, as it is taught) | 10 (a round is a single line, so the glyphs shrink a little and more rounds fit) |
 
 The rounds **fade out**: the first prints every letter and the last only two,
 falling evenly in between, so the student ends up writing the sequence from

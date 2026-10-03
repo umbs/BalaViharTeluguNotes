@@ -16,16 +16,21 @@
   ([ప], "pa"), ([ఫ], "pha"), ([బ], "ba"), ([భ], "bha"), ([మ], "ma"),
 )
 
-// అవర్గీయ హల్లులు — the eleven that fall outside the vargas, ఱ included.
+// అవర్గీయ హల్లులు — the eleven that fall outside the vargas. ఱ (బండి ఱ) comes
+// last, after క్ష, which is the order the children are taught.
 #let avargiya = (
-  ([య], "ya"), ([ర], "ra"), ([ఱ], "ṟa"), ([ల], "la"), ([వ], "va"), ([శ], "śa"),
-  ([ష], "ṣa"), ([స], "sa"), ([హ], "ha"), ([ళ], "ḷa"), ([క్ష], "kṣa"),
+  ([య], "ya"), ([ర], "ra"), ([ల], "la"), ([వ], "va"), ([శ], "śa"),
+  ([ష], "ṣa"), ([స], "sa"), ([హ], "ha"), ([ళ], "ḷa"), ([క్ష], "kṣa"), ([ఱ], "ṟa"),
 )
 
-#let rounds = 8
+// A varga square takes five lines, so eight rounds is what the page holds; a
+// line of eleven takes one, so that sheet fits ten — and ten rounds over
+// eleven letters happens to come out at exactly one letter fewer each round.
+#let varga-rounds = 8
+#let avarga-rounds = 10
 
 // First round prints every letter, last round only two.
-#let shown(letters, round) = int(calc.round(
+#let shown(letters, round, rounds) = int(calc.round(
   letters.len() - (letters.len() - 2) * round / (rounds - 1),
 ))
 
@@ -69,10 +74,10 @@
   // the letters are wide, or the square reads as a block of text rather than
   // as five rows to write on.
   row-gap: 15pt,
-  keep: varga-keep.slice(0, shown(vargiya, round)),
+  keep: varga-keep.slice(0, shown(vargiya, round, varga-rounds)),
 )
 
-#let bands = int(rounds / 2)
+#let bands = int(varga-rounds / 2)
 #for band in range(bands) {
   grid(
     columns: (1fr, 1fr),
@@ -100,20 +105,20 @@
 #text(size: 13pt, weight: "bold")[పదకొండు అక్షరాలు (All eleven — fewer letters each round)]
 #v(10pt)
 
-// Eleven letters make one line, so a round is a single line and the glyphs can
-// be drawn large.
-#for round in range(rounds) {
+// Eleven letters make one line, so a round is a single line; the glyphs stay
+// larger than on the other sheets even with ten rounds stacked up.
+#for round in range(avarga-rounds) {
   block(
     breakable: false,
     trace-lines(
       avargiya,
       columns: avargiya.len(),
-      size: 30pt,
-      keep: avarga-keep.slice(0, shown(avargiya, round)),
+      size: 26pt,
+      keep: avarga-keep.slice(0, shown(avargiya, round, avarga-rounds)),
     ),
   )
   v(1fr)
-  if round + 1 < rounds {
+  if round + 1 < avarga-rounds {
     line(length: 100%, stroke: 0.5pt + luma(200))
     v(1fr)
   }
