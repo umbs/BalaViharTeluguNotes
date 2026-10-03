@@ -18,7 +18,7 @@ Level1/            Level 1 class material
   tracing.typ        Dotted trace-over helpers (trace-row / trace-section)
   testing.typ        Fill-in-the-missing-letter helpers (question / test-header)
   Workbook/          Alphabet tracing sheets (acchulu, hallulu)
-  Tests/             Test papers (test1_acchulu, test2_hallulu)
+  Tests/             Test papers (test1_acchulu, test2_hallulu, test3_guninthaalu)
   workbook.typ       Workbook entry point   -> Level1/workbook.pdf
   tests.typ          Tests entry point      -> Level1/tests.pdf
 Level2/            Level 2 class material
@@ -82,11 +82,10 @@ with a transparent fill and a dotted stroke — so no separate tracing font is
 needed. The shared helpers `trace-row` and `trace-section` live in
 `Level1/tracing.typ`.
 
-`Tests/` holds printable **test papers**. `test1_acchulu.typ` and
-`test2_hallulu.typ` are "fill in the missing letter" tests: a question shows a
-stretch of the alphabet chart with some cells blanked out for the student to
-write in. Blanked positions are disjoint across questions, so no letter is
-asked twice.
+`Tests/` holds printable **test papers** — "fill in the missing" tests, where a
+question shows part of a chart or table with some cells blanked out for the
+student to write in. Blanked positions are disjoint across questions, so
+nothing is asked twice.
 
 `test1_acchulu.typ` (16 marks) is four questions over the full 16-vowel chart,
 four blanks each. `test2_hallulu.typ` (36 marks) has two parts, because
@@ -99,10 +98,20 @@ reprinting all 35 consonants for the sake of four blanks wastes the page:
   page of their own; at that blank density the whole chart earns its space.
 
 A 5-column consonant slice is only half the page wide, so Part A is set two-up
-with `question-row`, fitting all four slice questions on one page. The helpers
-`question`, `question-row`, `quiz-grid`, `test-part`, and `test-header` live in
-`Level1/testing.typ`; per-question marks are derived from the number of blanks,
-so they cannot drift out of sync with the grid.
+with `question-row`, fitting all four slice questions on one page.
+
+`test3_guninthaalu.typ` (30 marks) is a three-column table instead of a chart:
+each row is a vowel (always printed, it is the prompt), the guṇintaṁ sign that
+vowel takes on a consonant, and the name of that sign. One cell per row is
+blanked, alternating between the two answer columns. Its two questions are the
+same table with complementary blanks, so between them every sign and every name
+is asked once; the అ row is printed whole in both as a worked example, since
+the inherent తలకట్టు has no mark of its own to write.
+
+The helpers `question`, `table-question`, `question-row`, `quiz-grid`,
+`quiz-table`, `test-part`, and `test-header` live in `Level1/testing.typ`;
+per-question marks are derived from the number of blanks, so they cannot drift
+out of sync with what is actually asked.
 
 ## Building
 

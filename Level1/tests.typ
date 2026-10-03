@@ -18,3 +18,7 @@
 
 // Test 2 — consonants
 #include "Tests/test2_hallulu.typ"
+#pagebreak()
+
+// Test 3 — guṇintaṁ signs and their names
+#include "Tests/test3_guninthaalu.typ"

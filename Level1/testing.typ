@@ -12,6 +12,10 @@
 //   * a full chart — the whole sequence, which only earns its space with a
 //     generous number of blanks (~10), and is placed two-up via `question-row`.
 //
+// A third shape, `table-question`, asks the same thing of a three-column
+// reference table (vowel / its guṇintaṁ sign / the sign's name): the first
+// column is the prompt and blanks are punched into the other two.
+//
 // The blank cells are dashed boxes sized from the glyph size, so a blank cell
 // is the same height as a letter cell and the grid stays even.
 
@@ -19,14 +23,17 @@
 // blank (a glyph on its own is shorter than the box the student writes in).
 #let slot-height(size) = 1.5 * size
 
-// An empty box for the student to write one letter into. Deliberately larger
-// than the glyph it stands for — a beginner's letter needs room.
-#let blank-slot(size) = box(
-  width: 1.6 * size,
+// An empty box for the student to write an answer into.
+#let blank-line(size, width: 100%) = box(
+  width: width,
   height: slot-height(size),
   radius: 2pt,
   stroke: (paint: luma(150), thickness: 0.6pt, dash: "dashed"),
 )
+
+// An empty box for the student to write one letter into. Deliberately larger
+// than the glyph it stands for — a beginner's letter needs room.
+#let blank-slot(size) = blank-line(size, width: 1.6 * size)
 
 // A printed letter, boxed to the same height as a blank.
 #let letter-slot(letter, size) = box(
@@ -58,13 +65,58 @@
   ),
 )
 
+// A three-column table with some cells blanked out — used for the guṇintaṁ
+// test, where a vowel is matched to its sign (గుర్తు) and the sign's name.
+//
+//   rows    : array of (prompt, mark, name) triples
+//   blanks  : (row, column) pairs, 0-based, naming the cells to leave empty;
+//             column 0 is the prompt and is never blanked
+//   headers : the three column headings
+//
+// A name is several syllables long, so its blank is a full-width writing box
+// rather than the one-glyph box a sign gets.
+#let quiz-table(
+  rows,
+  blanks: (),
+  headers: (),
+  columns: (1fr, 1fr, 2.4fr),
+  size: 20pt,
+  name-size: 12pt,
+  width: 100%,
+) = block(
+  width: width,
+  grid(
+    columns: columns,
+    stroke: 0.5pt + luma(215),
+    inset: (x: 6pt, y: 3pt),
+    align: center + horizon,
+    ..headers.map(heading => text(size: 11pt, weight: "bold")[#heading]),
+    ..rows
+      .enumerate()
+      .map(((i, row)) => (
+        letter-slot(row.at(0), size),
+        if blanks.contains((i, 1)) { blank-slot(size) } else { letter-slot(row.at(1), size) },
+        if blanks.contains((i, 2)) { blank-line(size) } else {
+          box(height: slot-height(size), align(horizon, text(size: name-size)[#row.at(2)]))
+        },
+      ))
+      .flatten(),
+  ),
+)
+
+// Label line above a question: number, optional note, and the mark count. The
+// mark count is the number of blanks, so it can never drift out of sync with
+// what is actually asked.
+#let question-head(number, marks, note) = [
+  #text(size: 12pt, weight: "bold")[ప్రశ్న #number]
+  #if note != none [ #text(size: 10pt, fill: luma(90))[— #note] ]
+  #text(size: 10pt, fill: luma(90))[ (#marks marks)]
+]
+
 // One numbered question: label line + the grid, kept on a single page so a
 // question never splits across a page break.
 //
 //   note : optional hint about what this slice covers, e.g. "క, చ వర్గములు"
-//
-// The mark count is the number of blanks, so it can never drift out of sync
-// with the grid.
 #let question(
   number,
   letters,
@@ -74,11 +126,34 @@
   size: 20pt,
   width: 100%,
 ) = block(breakable: false, above: 12pt)[
-  #text(size: 12pt, weight: "bold")[ప్రశ్న #number]
-  #if note != none [ #text(size: 10pt, fill: luma(90))[— #note] ]
-  #text(size: 10pt, fill: luma(90))[ (#blanks.len() marks)]
+  #question-head(number, blanks.len(), note)
   #v(4pt)
   #quiz-grid(letters, blanks: blanks, columns: columns, size: size, width: width)
+]
+
+// A numbered question whose body is a `quiz-table` rather than a chart grid.
+#let table-question(
+  number,
+  rows,
+  blanks: (),
+  note: none,
+  headers: (),
+  columns: (1fr, 1fr, 2.4fr),
+  size: 20pt,
+  name-size: 12pt,
+  width: 100%,
+) = block(breakable: false, above: 12pt)[
+  #question-head(number, blanks.len(), note)
+  #v(4pt)
+  #quiz-table(
+    rows,
+    blanks: blanks,
+    headers: headers,
+    columns: columns,
+    size: size,
+    name-size: name-size,
+    width: width,
+  )
 ]
 
 // Lay several questions out across the page instead of stacked, so wide-but-

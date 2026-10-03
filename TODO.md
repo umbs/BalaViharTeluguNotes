@@ -45,6 +45,10 @@ folder mirroring `Level2/` (its own `Textbook/`, `Workbook/`, `textbook.typ`,
     - ~~**Hallulu — fill in the missing**~~ — done for Level 1:
       `Level1/Tests/test2_hallulu.typ` (Part A: 4 slice questions × 4 blanks
       partitioning the chart; Part B: 2 full charts × 10 blanks; 36 marks).
+    - ~~**Guṇintaṁ signs — fill in the missing**~~ — done for Level 1:
+      `Level1/Tests/test3_guninthaalu.typ` (vowel / sign / name of the sign,
+      one cell blanked per row; 2 questions with complementary blanks,
+      30 marks).
     - **Acchulu — write in full** — write the entire set from memory, no hints.
     - **Hallulu — write in full** — write the entire set from memory, no hints.
     - **Level 2 tests** — same shape for the Level 2 material (guṇintaalu,
