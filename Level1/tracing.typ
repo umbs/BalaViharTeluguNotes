@@ -13,13 +13,15 @@
 // Fully transparent fill, so only the dotted stroke (outline) is visible.
 #let clear = rgb(0, 0, 0, 0)
 
-// One dotted copy of a letter to trace over. The stroke is dark enough to
-// print clearly but still lighter than a pencil so the traced line stands out.
+// One dotted copy of a letter to trace over. Near-black, so the guide prints
+// clearly on a classroom printer and is easy for a young child to follow; the
+// dotted dash (rather than a lighter grey) is what keeps it readable as a
+// guide under the student's own traced line.
 #let dotted(letter, size) = text(
   size: size,
   weight: "thin",
   fill: clear,
-  stroke: (paint: luma(105), thickness: 0.8pt, dash: "densely-dotted"),
+  stroke: (paint: luma(20), thickness: 1.1pt, dash: "densely-dotted"),
 )[#letter]
 
 // One chart cell: `copies` dotted glyphs in a row (so the student traces the
@@ -42,6 +44,40 @@
     text(size: 11pt, fill: luma(110))[#roman]
   }
   v(6pt)
+}
+
+// The whole alphabet as plain lines of dotted letters, `columns` per row.
+//
+// No cell borders and no romanization: this is one continuous pass over the
+// alphabet, so it should read as lines of writing rather than as a chart of
+// boxes.
+//
+//   keep  : indices of the letters to print; the rest are left as empty cells
+//           for the student to fill in from memory. `none` prints them all.
+//           The cells keep their place either way, so a letter the student
+//           writes lands in the same column as the dotted one above it.
+//   split : line lengths, e.g. (18, 17) for a 35-letter chart. Needed when the
+//           alphabet does not divide evenly into lines: each line is laid out
+//           as its own grid, so a short line ends where its letters end rather
+//           than trailing empty cells that read as blanks to be filled in.
+//           Defaults to `columns` letters per line.
+#let trace-lines(items, columns: 8, size: 36pt, row-gap: 16pt, keep: none, split: none) = {
+  let lengths = if split != none { split } else {
+    range(calc.ceil(items.len() / columns)).map(i => calc.min(columns, items.len() - i * columns))
+  }
+  let cell(i) = if keep == none or keep.contains(i) { dotted(items.at(i).at(0), size) } else { [] }
+
+  let start = 0
+  let lines = ()
+  for length in lengths {
+    lines.push(grid(
+      columns: (1fr,) * length,
+      align: center + bottom,
+      ..range(start, start + length).map(cell),
+    ))
+    start += length
+  }
+  stack(spacing: row-gap, ..lines)
 }
 
 // A chart grid of letters to trace.

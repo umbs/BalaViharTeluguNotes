@@ -75,11 +75,27 @@ first, then a వత్తులు / Vattulu section).
 ### `Level1/`
 
 An alphabet-**tracing** workbook for beginning writers. `Workbook/acchulu.typ`
-and `Workbook/hallulu.typ` render each vowel / consonant as a bold model glyph
-followed by several dotted-outline copies for the student to trace over, on ruled
-baselines. The dotted outlines reuse the real Noto Serif Telugu glyphs — drawn
-with a transparent fill and a dotted stroke — so no separate tracing font is
-needed. The shared helpers `trace-row` and `trace-section` live in
+and `Workbook/hallulu.typ` give the alphabet as dotted letters, repeated as
+eight rounds down a page with a rule between rounds:
+
+| Sheet | Round | Rounds per page |
+| --- | --- | --- |
+| అచ్చులు | 16 vowels in two lines of 8 | 8 |
+| హల్లులు — వర్గీయ | the 25 structured consonants as their 5 × 5 varga square | 8, two to a band (a varga square is only half the page wide) |
+| హల్లులు — అవర్గీయ | the 11 unstructured consonants (ఱ included) in one line | 8 |
+
+The rounds **fade out**: the first prints every letter and the last only two,
+falling evenly in between, so the student ends up writing the sequence from
+memory. A blanked letter keeps its place, so what the student writes lands
+under the dotted letter above it. Which letters survive is a written-out
+`keep-order` per sheet, ordered longest-surviving first: survivors are spread
+as far apart as possible, but deliberately irregularly, so they never line up
+in tidy columns for the student to read as a pattern instead of recalling the
+sequence.
+
+The dotted outlines reuse the real Noto Serif Telugu glyphs — drawn with a
+transparent fill and a dotted stroke — so no separate tracing font is needed.
+The shared helpers `trace-lines`, `trace-grid`, and `trace-section` live in
 `Level1/tracing.typ`.
 
 `Tests/` holds printable **test papers** — "fill in the missing" tests, where a
