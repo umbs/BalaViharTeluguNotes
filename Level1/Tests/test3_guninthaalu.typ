@@ -56,7 +56,7 @@
   blanks: blanks-odd-sign,
   headers: headers,
   note: [మొదటి వరుస ఉదాహరణ],
-  size: 22pt,
+  size: 18pt,
 )
 
 #pagebreak()
@@ -67,5 +67,5 @@
   blanks: blanks-odd-name,
   headers: headers,
   note: [మొదటి వరుస ఉదాహరణ],
-  size: 22pt,
+  size: 18pt,
 )
